@@ -29,9 +29,9 @@ bool HelloWorld::init()
     {
         return false;
     }
-   //auto audio = SimpleAudioEngine::getInstance();
-   //audio->stopBackgroundMusic(true);
-   //audio->playBackgroundMusic("audio/MenuTheme.mp3", false);
+   auto audio = SimpleAudioEngine::getInstance();
+   audio->stopBackgroundMusic(true);
+   audio->playBackgroundMusic("audio/MenuTheme.mp3", false);
 
     auto visibleSize = Director::getInstance()->getVisibleSize();
     Vec2 origin = Director::getInstance()->getVisibleOrigin();

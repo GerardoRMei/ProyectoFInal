@@ -38,11 +38,11 @@ bool GameWonScene::init()
         return false;
     }
     coin = 0;
-    /*
+    
     auto musica = SimpleAudioEngine::getInstance();
     musica->stopBackgroundMusic(true);
     musica->playBackgroundMusic("audio/VictoryTheme.mp3", true);
-    */
+    
     auto visibleSize = Director::getInstance()->getVisibleSize();
     Vec2 origin = Director::getInstance()->getVisibleOrigin();
 

@@ -64,11 +64,11 @@ bool RegMode::init()
 
     auto visibleSize = Director::getInstance()->getVisibleSize();
     Vec2 origin = Director::getInstance()->getVisibleOrigin();
-    /*
+    
     auto musica = SimpleAudioEngine::getInstance();
     musica->stopBackgroundMusic(true);
     musica->playBackgroundMusic("audio/MainTheme.mp3", false);
-    */
+    
 
     FondoDePantalla3 = Sprite::create("background.png");
     FondoDePantalla3->setAnchorPoint(Vec2::ZERO);
@@ -184,8 +184,8 @@ void RegMode::Fire3(float dt) {
                 this->addChild(bullet, 1);
                 bullet->runAction(remove);
                 log("paso el ultimo cheque");
-                //auto fireSFX = SimpleAudioEngine::getInstance();
-                //fireSFX->SimpleAudioEngine::playEffect("audio/fire.mp3", false);
+                auto fireSFX = SimpleAudioEngine::getInstance();
+                fireSFX->SimpleAudioEngine::playEffect("audio/fire.mp3", false);
             }
             else {
 
@@ -209,8 +209,8 @@ void RegMode::Fire3(float dt) {
                 this->addChild(bullet, 1);
                 bullet->runAction(remove);
                 log("paso el ultimo cheque");
-                //auto fireSFX = SimpleAudioEngine::getInstance();
-                //fireSFX->SimpleAudioEngine::playEffect("audio/fire.mp3", false);
+                auto fireSFX = SimpleAudioEngine::getInstance();
+                fireSFX->SimpleAudioEngine::playEffect("audio/fire.mp3", false);
             }
             else {
 
@@ -393,8 +393,8 @@ bool RegMode::onContactBegin(PhysicsContact& contact)
         else if (nodeB->getTag() == 25)
         {
             nodeA->getPhysicsBody()->getOwner()->getChildByName<Enemy*>("enemySoul")->setHealth(0);
-            //auto BaseHurtSFX = SimpleAudioEngine::getInstance();
-            //BaseHurtSFX->SimpleAudioEngine::playEffect("audio/BaseWasHurt.mp3", false);
+            auto BaseHurtSFX = SimpleAudioEngine::getInstance();
+            BaseHurtSFX->SimpleAudioEngine::playEffect("audio/BaseWasHurt.mp3", false);
             log("choco al jefe");
             scoring3 -= 10000;
             texto53 = "Score:    " + std::to_string(scoring3);
@@ -423,8 +423,8 @@ bool RegMode::onContactBegin(PhysicsContact& contact)
 
 
                 if (nodeB->getPhysicsBody()->getOwner()->getChildByName<Enemy*>("enemySoul")->getHealth() <= 0) {
-                    //auto deathSFX = SimpleAudioEngine::getInstance();
-                    //deathSFX->SimpleAudioEngine::playEffect("audio/death.mp3", false);
+                    auto deathSFX = SimpleAudioEngine::getInstance();
+                    deathSFX->SimpleAudioEngine::playEffect("audio/death.mp3", false);
                     scoring3 += 1000;
                     texto53 = "Score:    " + std::to_string(scoring3);
                     score3->setString(texto53);
@@ -451,8 +451,8 @@ bool RegMode::onContactBegin(PhysicsContact& contact)
 
 
                 if (nodeA->getPhysicsBody()->getOwner()->getChildByName<Enemy*>("enemySoul")->getHealth() <= 0) {
-                    //auto BaseHurtSFX = SimpleAudioEngine::getInstance();
-                    //BaseHurtSFX->SimpleAudioEngine::playEffect("audio/death.mp3", false);
+                    auto BaseHurtSFX = SimpleAudioEngine::getInstance();
+                    BaseHurtSFX->SimpleAudioEngine::playEffect("audio/death.mp3", false);
                     scoring3 += 1000;
                     texto53 = std::to_string(scoring3);
                     score3->setString(texto53);
@@ -481,8 +481,8 @@ bool RegMode::onContactBegin(PhysicsContact& contact)
 
 
                 if (nodeB->getPhysicsBody()->getOwner()->getChildByName<Enemy*>("enemySoul")->getHealth() <= 0) {
-                    //auto deathSFX = SimpleAudioEngine::getInstance();
-                    //deathSFX->SimpleAudioEngine::playEffect("audio/death.mp3", false);
+                   auto deathSFX = SimpleAudioEngine::getInstance();
+                    deathSFX->SimpleAudioEngine::playEffect("audio/death.mp3", false);
                     scoring3 += 1000;
                     texto53 = "Score:    " + std::to_string(scoring3);
                     score3->setString(texto53);
@@ -511,8 +511,8 @@ bool RegMode::onContactBegin(PhysicsContact& contact)
 
 
                 if (nodeA->getPhysicsBody()->getOwner()->getChildByName<Enemy*>("enemySoul")->getHealth() <= 0) {
-                    //auto deathSFX = SimpleAudioEngine::getInstance();
-                    //deathSFX->SimpleAudioEngine::playEffect("audio/death.mp3", false);
+                    auto deathSFX = SimpleAudioEngine::getInstance();
+                    deathSFX->SimpleAudioEngine::playEffect("audio/death.mp3", false);
                     scoring3 += 1000;
                     texto53 = std::to_string(scoring3);
                     score3->setString(texto53);
